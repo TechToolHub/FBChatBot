@@ -10,7 +10,7 @@ const
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 app.use(express.static(path.join(__dirname, 'public')))
-app.get('/', (req, res) => res.render('public/index'))
+//app.get('/', (req, res) => res.render('public/index'))
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {  
  
