@@ -9,8 +9,8 @@ const
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
-app.use(express.static(__dirname+ 'public'))
-//app.get('/', (req, res) => res.render('public/index'))
+app.use('/public', express.static('public'))
+app.get('/', (req, res) => {res.sendFile(__dirname + '/public/index.html');})
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {  
  
