@@ -16,11 +16,11 @@ const messageWebhookController = require('./controllers/messageWebhook');
 app.get('/', verificationController);
 app.post('/', messageWebhookController);
 
-/*
+
 app.use('/public', express.static('public'))
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
-})
+})/*
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {
 

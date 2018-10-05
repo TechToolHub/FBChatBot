@@ -23,7 +23,7 @@ module.exports = (event) => {
     const senderId = event.sender.id;
     const message = event.message.text;
     const apiaiSession = apiAiClient.textRequest(message, {
-        sessionId: 'crowdbotics_bot'
+        sessionId: 'CodeWorldChatBot'
     });
     apiaiSession.on('response', (response) => {
         const result = response.result.fulfillment.speech;
