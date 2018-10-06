@@ -13,14 +13,21 @@ app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 const verificationController = require('./controllers/verification');
 const messageWebhookController = require('./controllers/messageWebhook');
-app.get('/', verificationController);
-app.post('/', messageWebhookController);
+app.get('/webtoken', verificationController);
+app.post('/webtoken', messageWebhookController);
 
 
 app.use('/public', express.static('public'))
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
-})/*
+})
+
+var http = require("https");
+setInterval(function() {
+    http.get("https://codeworld1.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)
+
+/*
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {
 
